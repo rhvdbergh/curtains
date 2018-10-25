@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Mali|Raleway" rel="stylesheet">
+  <title>Curtains</title>
+</head>
+
+<style>
+
+  * {
+    color: #3a9fde;
+    font-family: 'Raleway', sans-serif;
+  }
+
+  .header {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: 50px;
+  }
+
+  .panels {
+    padding-right: 10%;
+    padding-left: 10%;
+    display: flex;
+    height: 600px;
+  }
+
+  .panel {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-content: center;
+    justify-content: center;
+    transition: 0.3s cubic-bezier(0.6,-0.28, 0.74, 0.05);
+  }
+
+  .panel_1 {
+    background-image: url("https://placeimg.com/800/600/animals");
+    background-position: center;
+  }
+  .panel_2 {
+    background-image: url("https://placeimg.com/800/600/arch");
+    background-position: center;
+  }
+  .panel_3 {
+    background-image: url("https://placeimg.com/800/600/nature");
+    background-position: center;
+  }
+  .panel_4 {
+    background-image: url("https://placeimg.com/800/600/people");
+    background-position: center;
+  }
+  .panel_5 {
+    background-image: url("https://placeimg.com/800/600/tech");
+    background-position: center;
+  }
+
+  .panel_active {
+    flex: 5;
+  }
+
+  .panel p {
+    text-align: center;
+    color: cornsilk;
+    font-family: 'Mali', cursive;
+    font-size: 60px;
+    text-shadow: 2px 2px black;
+  }
+
+</style>
+
+<body>
+  
+  <div class="header">
+    <h1>Concertina Windows!</h1>
+  </div>
+  
+  <div class="panels">
+    <div class="panel panel_1">
+      <p>Click</p>
+    </div>
+    <div class="panel panel_2">
+      <p>Me</p>
+    </div>
+    <div class="panel panel_3">
+      <p>&</p>
+    </div>
+    <div class="panel panel_4">
+      <p>Go</p>
+    </div>
+    <div class="panel panel_5">
+      <p>Big</p>
+    </div>
+  </div>
+  
+</body>
+
+<script>
+
+  const panels = document.querySelectorAll('.panel');
+
+  function toggleActive() {
+
+    const panel_actives = document.querySelectorAll('.panel_active');
+    panel_actives.forEach(panel => panel.classList.toggle('panel_active')); // remove any other active panels
+
+    this.classList.toggle('panel_active');
+
+  }
+
+  panels.forEach(panel => panel.addEventListener('click', toggleActive));
+
+</script>
+
+</html>
